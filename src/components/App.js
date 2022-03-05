@@ -2,10 +2,13 @@ import React, { Component, useState } from "react";
 import "./../styles/App.css";
 
 function App() {
-  const [id, setId] = useState("text");
-
+  const [id, setId] = useState("click");
+  const [text, settext] = useState(false);
   function PrintTag() {
-    setId("para");
+    if (id == "click") {
+      setId("para");
+    }
+    settext(true);
   }
   return (
     <div id="main">
@@ -14,7 +17,7 @@ function App() {
       </button>
 
       <p>
-        {id == "para"
+        {text
           ? "Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"
           : " "}
       </p>
